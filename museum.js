@@ -22,7 +22,7 @@ function setup() {
 
 function draw() {
   background("black");
-  image(museumMap, globalX, globalY, 3_000, 2_400);
+  image(museumMap, globalX, globalY, 900, 800);
   // image(playerSprite, midW, midH, 80, 80);
   drawGui();
 
