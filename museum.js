@@ -1,6 +1,6 @@
 let GUI;
 let control = {};
-let [globalX, globalY] = [-150, -150];
+let [globalX, globalY] = [120, 110];
 let museumMap;
 let playerSprite;
 
@@ -22,7 +22,7 @@ function setup() {
 
 function draw() {
   background("black");
-  image(museumMap, globalX, globalY, 10_000, 10_400);
+  image(museumMap, globalX, globalY, 3_000, 2_400);
   // image(playerSprite, midW, midH, 80, 80);
   drawGui();
 
@@ -30,10 +30,10 @@ function draw() {
   globalX += control.joystick.valX;
   globalY += control.joystick.valY;
 
-  rightCollision = get(midW + 81, midH).slice(0, 3);
-  leftCollision = get(midW - 81, midH).slice(0, 3);
-  topCollision = get(midW, midH - 81).slice(0, 3);
-  bottomCollision = get(midW, midH + 81).slice(0, 3);
+  rightCollision = get(midW + 41, midH).slice(0, 3);
+  leftCollision = get(midW - 41, midH).slice(0, 3);
+  topCollision = get(midW, midH - 41).slice(0, 3);
+  bottomCollision = get(midW, midH + 41).slice(0, 3);
 
   console.log(leftCollision);
   if (topCollision.reduce((a, b) => a + b, 0) <= 50) {
@@ -58,7 +58,7 @@ function draw() {
   fill("#7AA0FF");
   stroke("#FFFFFF");
   rectMode(CENTER);
-  rect(midW, midH, 80, 80);
+  ellipse(midW, midH, 40, 40);
 }
 
 /// Add these lines below sketch to prevent scrolling on mobile
