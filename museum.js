@@ -1,36 +1,62 @@
 let GUI;
 let control = {};
-let [velX, velY] = [0, 0];
+let [globalX, globalY] = [-150, -150];
+let museumMap;
+let playerSprite;
+
+let midW, midH;
+
+function preload() {
+  museumMap = loadImage("assets/blueprint.jpeg");
+  museumMap.loadPixels();
+  playerSprite = loadImage("assets/pug-dog-dancing.gif");
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   setupControls();
+  imageMode(CENTER);
+  midW = windowWidth / 2;
+  midH = windowHeight / 2;
 }
 
 function draw() {
-  background("#242038");
+  background("black");
+  image(museumMap, globalX, globalY, 10_000, 10_400);
+  image(playerSprite, midW, midH, 80, 80);
   drawGui();
-  if (control.joystick.isChanged) {
-    // Print a message when Slider 1 is changed
-    // that displays its value.
-    print(
-      control.joystick.label +
-        " = {" +
-        control.joystick.valX +
-        ", " +
-        control.joystick.valY +
-        "}"
-    );
-  }
 
   // Use Joystick's output to change velocity
-  velX += control.joystick.valX;
-  velY += control.joystick.valY;
+  globalX += control.joystick.valX;
+  globalY += control.joystick.valY;
+
+  rightCollision = get(midW + 81, midH).slice(0, 3);
+  leftCollision = get(midW - 81, midH).slice(0, 3);
+  topCollision = get(midW, midH - 81).slice(0, 3);
+  bottomCollision = get(midW, midH + 81).slice(0, 3);
+
+  console.log(leftCollision);
+  if (topCollision.reduce((a, b) => a + b, 0) <= 50) {
+    globalY -= 5;
+  }
+  if (bottomCollision.reduce((a, b) => a + b, 0) <= 50) {
+    globalY += 5;
+  }
+  if (leftCollision.reduce((a, b) => a + b, 0) <= 50) {
+    globalX -= 5;
+  }
+  if (rightCollision.reduce((a, b) => a + b, 0) <= 50) {
+    globalX += 5;
+  }
+  // console.log(
+  //   get(mouseX, mouseY)
+  //     .slice(0, 3)
+  //     .reduce((a, b) => a + b, 0)
+  // );
 
   // Draw our ellipse
   fill("#7AA0FF");
   stroke("#FFFFFF");
-  ellipse(velX, velY, 100);
 }
 
 /// Add these lines below sketch to prevent scrolling on mobile
