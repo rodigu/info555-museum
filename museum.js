@@ -1,15 +1,15 @@
 let GUI;
 let control = {};
-let [globalX, globalY] = [120, 110];
+let [globalX, globalY] = [300, 200];
 let museumMap;
 let playerSprite;
 
 let midW, midH;
 
 function preload() {
-  museumMap = loadImage("assets/blueprint.jpeg");
+  museumMap = loadImage("assets/map.png");
   museumMap.loadPixels();
-  // playerSprite = loadImage("assets/pug-dog-dancing.gif");
+  playerSprite = loadImage("assets/pug-dog-dancing.gif");
 }
 
 function setup() {
@@ -18,34 +18,34 @@ function setup() {
   imageMode(CENTER);
   midW = windowWidth / 2;
   midH = windowHeight / 2;
+  noStroke();
 }
 
 function draw() {
-  background("black");
-  image(museumMap, globalX, globalY, 900, 800);
-  // image(playerSprite, midW, midH, 80, 80);
+  background("white");
+  image(museumMap, globalX, globalY, 1000, 1000);
+  image(playerSprite, midW, midH, 40, 40);
   drawGui();
 
   // Use Joystick's output to change velocity
   globalX += control.joystick.valX;
   globalY += control.joystick.valY;
 
-  rightCollision = get(midW + 41, midH).slice(0, 3);
-  leftCollision = get(midW - 41, midH).slice(0, 3);
-  topCollision = get(midW, midH - 41).slice(0, 3);
-  bottomCollision = get(midW, midH + 41).slice(0, 3);
+  rightCollision = get(midW + 21, midH).slice(0, 3);
+  leftCollision = get(midW - 21, midH).slice(0, 3);
+  topCollision = get(midW, midH - 21).slice(0, 3);
+  bottomCollision = get(midW, midH + 21).slice(0, 3);
 
-  console.log(leftCollision);
-  if (topCollision.reduce((a, b) => a + b, 0) <= 50) {
+  if (topCollision.reduce((a, b) => a + b, 0) <= 120) {
     globalY -= 5;
   }
-  if (bottomCollision.reduce((a, b) => a + b, 0) <= 50) {
+  if (bottomCollision.reduce((a, b) => a + b, 0) <= 120) {
     globalY += 5;
   }
-  if (leftCollision.reduce((a, b) => a + b, 0) <= 50) {
+  if (leftCollision.reduce((a, b) => a + b, 0) <= 120) {
     globalX -= 5;
   }
-  if (rightCollision.reduce((a, b) => a + b, 0) <= 50) {
+  if (rightCollision.reduce((a, b) => a + b, 0) <= 120) {
     globalX += 5;
   }
   // console.log(
@@ -55,10 +55,9 @@ function draw() {
   // );
 
   // Draw our ellipse
-  fill("#7AA0FF");
-  stroke("#FFFFFF");
-  rectMode(CENTER);
-  ellipse(midW, midH, 40, 40);
+  // rectMode(CENTER);
+  // fill("red");
+  // ellipse(midW, midH, 20, 20);
 }
 
 /// Add these lines below sketch to prevent scrolling on mobile
