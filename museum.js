@@ -9,7 +9,7 @@ let midW, midH;
 function preload() {
   museumMap = loadImage("assets/blueprint.jpeg");
   museumMap.loadPixels();
-  playerSprite = loadImage("assets/pug-dog-dancing.gif");
+  // playerSprite = loadImage("assets/pug-dog-dancing.gif");
 }
 
 function setup() {
@@ -23,7 +23,7 @@ function setup() {
 function draw() {
   background("black");
   image(museumMap, globalX, globalY, 10_000, 10_400);
-  image(playerSprite, midW, midH, 80, 80);
+  // image(playerSprite, midW, midH, 80, 80);
   drawGui();
 
   // Use Joystick's output to change velocity
@@ -57,6 +57,8 @@ function draw() {
   // Draw our ellipse
   fill("#7AA0FF");
   stroke("#FFFFFF");
+  rectMode(CENTER);
+  rect(midW, midH, 80, 80);
 }
 
 /// Add these lines below sketch to prevent scrolling on mobile
