@@ -31,22 +31,30 @@ function draw() {
   globalX += control.joystick.valX;
   globalY += control.joystick.valY;
 
-  // rightCollision = get(midW + 21, midH).slice(0, 3);
-  // leftCollision = get(midW - 21, midH).slice(0, 3);
-  // topCollision = get(midW, midH - 21).slice(0, 3);
-  // bottomCollision = get(midW, midH + 21).slice(0, 3);
-  // if (topCollision.reduce((a, b) => a + b, 0) <= 120) {
-  //   globalY -= 5;
-  // }
-  // if (bottomCollision.reduce((a, b) => a + b, 0) <= 120) {
-  //   globalY += 5;
-  // }
-  // if (leftCollision.reduce((a, b) => a + b, 0) <= 120) {
-  //   globalX -= 5;
-  // }
-  // if (rightCollision.reduce((a, b) => a + b, 0) <= 120) {
-  //   globalX += 5;
-  // }
+  if (control.joystick.valX < 0) {
+    rightCollision = get(midW + 21, midH).slice(0, 3);
+    if (rightCollision.reduce((a, b) => a + b, 0) <= 120) {
+      globalX += 5;
+    }
+  }
+  if (control.joystick.valX > 0) {
+    leftCollision = get(midW - 21, midH).slice(0, 3);
+    if (leftCollision.reduce((a, b) => a + b, 0) <= 120) {
+      globalX -= 5;
+    }
+  }
+  if (control.joystick.valY > 0) {
+    topCollision = get(midW, midH - 21).slice(0, 3);
+    if (topCollision.reduce((a, b) => a + b, 0) <= 120) {
+      globalY -= 5;
+    }
+  }
+  if (control.joystick.valY < 0) {
+    bottomCollision = get(midW, midH + 21).slice(0, 3);
+    if (bottomCollision.reduce((a, b) => a + b, 0) <= 120) {
+      globalY += 5;
+    }
+  }
   drawGui();
 
   // fill("red");
