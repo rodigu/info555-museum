@@ -19,34 +19,38 @@ function setup() {
   midW = windowWidth / 2;
   midH = windowHeight / 2;
   noStroke();
+  frameRate(30);
+  p5.disableFriendlyErrors = true;
 }
 
 function draw() {
-  if (control.joystick.isHeld) {
-    background("white");
-    image(museumMap, globalX, globalY, 1000, 1000);
-    image(playerSprite, midW, midH, 40, 40);
-    globalX += control.joystick.valX;
-    globalY += control.joystick.valY;
+  background("white");
+  // image(museumMap, globalX, globalY, 1000, 1000);
+  // image(playerSprite, midW, midH, 40, 40);
 
-    rightCollision = get(midW + 21, midH).slice(0, 3);
-    leftCollision = get(midW - 21, midH).slice(0, 3);
-    topCollision = get(midW, midH - 21).slice(0, 3);
-    bottomCollision = get(midW, midH + 21).slice(0, 3);
-    if (topCollision.reduce((a, b) => a + b, 0) <= 120) {
-      globalY -= 5;
-    }
-    if (bottomCollision.reduce((a, b) => a + b, 0) <= 120) {
-      globalY += 5;
-    }
-    if (leftCollision.reduce((a, b) => a + b, 0) <= 120) {
-      globalX -= 5;
-    }
-    if (rightCollision.reduce((a, b) => a + b, 0) <= 120) {
-      globalX += 5;
-    }
+  globalX += control.joystick.valX;
+  globalY += control.joystick.valY;
+
+  rightCollision = get(midW + 21, midH).slice(0, 3);
+  leftCollision = get(midW - 21, midH).slice(0, 3);
+  topCollision = get(midW, midH - 21).slice(0, 3);
+  bottomCollision = get(midW, midH + 21).slice(0, 3);
+  if (topCollision.reduce((a, b) => a + b, 0) <= 120) {
+    globalY -= 5;
+  }
+  if (bottomCollision.reduce((a, b) => a + b, 0) <= 120) {
+    globalY += 5;
+  }
+  if (leftCollision.reduce((a, b) => a + b, 0) <= 120) {
+    globalX -= 5;
+  }
+  if (rightCollision.reduce((a, b) => a + b, 0) <= 120) {
+    globalX += 5;
   }
   drawGui();
+
+  fill("red");
+  ellipse(mouseX, mouseY, 20, 20);
 
   // Use Joystick's output to change velocity
 
