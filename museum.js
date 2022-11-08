@@ -20,7 +20,7 @@ function setup() {
   midH = windowHeight / 2;
   noStroke();
   p5.disableFriendlyErrors = true;
-  textSize(30);
+  textSize(20);
   textAlign(LEFT, TOP);
 }
 
