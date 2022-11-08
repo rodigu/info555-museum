@@ -28,11 +28,18 @@ function draw() {
   background("white");
   image(museumMap, globalX, globalY, 1000, 1000);
   image(playerSprite, midW, midH, 40, 40);
+  loadPixels();
   text(frameRate(), 0, 0);
 
   globalX += control.joystick.valX;
   globalY += control.joystick.valY;
+  handleCollisions();
 
+  drawGui();
+}
+
+function handleCollisions() {
+  console.log(pixels[4 * (Math.floor(midW) * Math.floor(midH))]);
   if (control.joystick.valX < 0) {
     rightCollision = get(midW + 21, midH).slice(0, 3);
     if (rightCollision.reduce((a, b) => a + b, 0) <= 120) {
@@ -57,23 +64,6 @@ function draw() {
       globalY += 5;
     }
   }
-  drawGui();
-
-  // fill("red");
-  // ellipse(mouseX, mouseY, 20, 20);
-
-  // Use Joystick's output to change velocity
-
-  // console.log(
-  //   get(mouseX, mouseY)
-  //     .slice(0, 3)
-  //     .reduce((a, b) => a + b, 0)
-  // );
-
-  // Draw our ellipse
-  // rectMode(CENTER);
-  // fill("red");
-  // ellipse(midW, midH, 20, 20);
 }
 
 /// Add these lines below sketch to prevent scrolling on mobile
