@@ -19,14 +19,16 @@ function setup() {
   midW = windowWidth / 2;
   midH = windowHeight / 2;
   noStroke();
-  frameRate(30);
   p5.disableFriendlyErrors = true;
+  textSize(30);
+  textAlign(LEFT, TOP);
 }
 
 function draw() {
   background("white");
   image(museumMap, globalX, globalY, 1000, 1000);
   image(playerSprite, midW, midH, 40, 40);
+  text(frameRate(), 0, 0);
 
   globalX += control.joystick.valX;
   globalY += control.joystick.valY;
