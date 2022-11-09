@@ -27,6 +27,12 @@ function preload() {
 }
 
 function setup() {
+  player = new Player(assetsList.player, {
+    w: 40,
+    h: 40,
+    mw: 20,
+    mh: 20
+  });
   createCanvas(windowWidth, windowHeight);
   setupControls();
   imageMode(CENTER);
