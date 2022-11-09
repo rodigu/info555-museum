@@ -23,7 +23,7 @@ const DO_DEBUG = false
 function preload() {
   assetsList.museumMap = loadImage("assets/map.png");
   assetsList.player = loadImage("assets/pug-dog-dancing.gif")
-  showing.img = loadImage("assets/pug-dog-dancing.gif")
+  showing.img = loadImage("assets/job_and_his_daughters.jpg")
 }
 
 function setup() {
