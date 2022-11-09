@@ -38,6 +38,8 @@ function setup() {
 
 function draw() {
   background("white");
+  
+  
   image(museumMap, globalX, globalY, 1000, 1000);
   // fill(0)
   // ellipse(mouseX, mouseY, 20, 20)
@@ -48,31 +50,38 @@ function draw() {
 
   globalX += control.joystick.valX;
   globalY += control.joystick.valY;
+  let collisionBox = get(midW - playerCol.mw, midH - playerCol.mh, playerCol.w, playerCol.h)
 
-  if (control.joystick.valX < 0) {
-    rightCollision = get(midW + 21, midH).slice(0, 3);
+  collisionBox.loadPixels()
+  let collisionPixels = collisionBox.pixels
+  // console.log(collisionBox.pixels.length / 4) 1681
+  if (control.joystick.valX !== 0 && control.joystick.valY !== 0) {
+    let rightCollision = collisionPixels.slice(4 * (playerCol.w * playerCol.mh - 1), 4 * (playerCol.w * playerCol.mh - 1) + 3)
+    // rightCollision = get(midW + 21, midH).slice(0, 3);
     if (rightCollision.reduce((a, b) => a + b, 0) <= 120) {
       globalX += 5;
     }
-  }
-  if (control.joystick.valX > 0) {
-    leftCollision = get(midW - 21, midH).slice(0, 3);
+  
+    let leftCollision = collisionPixels.slice(4 * (playerCol.w * playerCol.mh), 4 * (playerCol.w * playerCol.mh) + 3)
+    // leftCollision = get(midW - 21, midH).slice(0, 3);
     if (leftCollision.reduce((a, b) => a + b, 0) <= 120) {
       globalX -= 5;
     }
-  }
-  if (control.joystick.valY > 0) {
-    topCollision = get(midW, midH - 21).slice(0, 3);
+  
+    let topCollision = collisionPixels.slice(4 * playerCol.mw, 4 * playerCol.mw + 3)
+    // topCollision = get(midW, midH - 21).slice(0, 3);
     if (topCollision.reduce((a, b) => a + b, 0) <= 120) {
       globalY -= 5;
     }
-  }
-  if (control.joystick.valY < 0) {
-    bottomCollision = get(midW, midH + 21).slice(0, 3);
+  
+    let bottomCollision = collisionPixels.slice(4 * (playerCol.h * playerCol.w - playerCol.mw), 4 * (playerCol.h * playerCol.w - playerCol.mw) + 3)
+    // bottomCollision = get(midW, midH + 21).slice(0, 3);
+    // console.log([...bottomCollision])
     if (bottomCollision.reduce((a, b) => a + b, 0) <= 120) {
       globalY += 5;
     }
   }
+
   drawGui();
 
   // fill("red");
