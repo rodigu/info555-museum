@@ -4,6 +4,7 @@ let [globalX, globalY] = [500, 100];
 let assetsList = {}
 let museumMap;
 let player;
+let colorCollide = 100
 
 let showing = {
   img: {},
