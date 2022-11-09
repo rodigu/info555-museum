@@ -21,9 +21,9 @@ let midW, midH;
 const DO_DEBUG = false
 
 function preload() {
-  museumMap = loadImage("assets/map.png");
-  museumMap.loadPixels();
-  playerSprite = loadImage("assets/pug-dog-dancing.gif");
+  assetsList.museumMap = loadImage("assets/map.png");
+  assetsList.player = loadImage("assets/pug-dog-dancing.gif")
+  showing.img = loadImage("assets/pug-dog-dancing.gif")
 }
 
 function setup() {
