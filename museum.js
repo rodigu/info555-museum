@@ -1,8 +1,20 @@
 let GUI;
 let control = {};
-let [globalX, globalY] = [300, 200];
+let [globalX, globalY] = [500, 100];
 let museumMap;
 let playerSprite;
+let playerDim = {
+  w: 40,
+  h: 40,
+  mw: 20,
+  mh: 20
+}
+let playerCol = {
+  w: 46,
+  h: 46,
+  mw: 23,
+  mh: 23
+}
 
 let midW, midH;
 
