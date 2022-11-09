@@ -48,3 +48,7 @@ function handleMovement(collisionPixels){
     }
   }
 }
+
+function handleMenu(){
+  
+}
