@@ -24,3 +24,27 @@ function setupControls() {
     rounding: 20
   })
 }
+
+function handleMovement(collisionPixels){
+  if (control.joystick.valX !== 0 && control.joystick.valY !== 0) {
+    let rightCollision = collisionPixels.slice(4 * (player.collision.w * player.collision.mh - 1), 4 * (player.collision.w * player.collision.mh - 1) + 3)
+    if (rightCollision.reduce((a, b) => a + b, 0) <= 120) {
+      globalX += player.speed;
+    }
+  
+    let leftCollision = collisionPixels.slice(4 * (player.collision.w * player.collision.mh), 4 * (player.collision.w * player.collision.mh) + 3)
+    if (leftCollision.reduce((a, b) => a + b, 0) <= 120) {
+      globalX -= player.speed;
+    }
+  
+    let topCollision = collisionPixels.slice(4 * player.collision.mw, 4 * player.collision.mw + 3)
+    if (topCollision.reduce((a, b) => a + b, 0) <= 120) {
+      globalY -= player.speed;
+    }
+  
+    let bottomCollision = collisionPixels.slice(4 * (player.collision.h * player.collision.w - player.collision.mw), 4 * (player.collision.h * player.collision.w - player.collision.mw) + 3)
+    if (bottomCollision.reduce((a, b) => a + b, 0) <= 120) {
+      globalY += player.speed;
+    }
+  }
+}
