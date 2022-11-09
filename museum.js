@@ -38,8 +38,6 @@ function setup() {
 
 function draw() {
   background("white");
-  
-  
   image(museumMap, globalX, globalY, 1000, 1000);
   // fill(0)
   // ellipse(mouseX, mouseY, 20, 20)
