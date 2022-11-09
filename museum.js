@@ -1,22 +1,24 @@
 let GUI;
 let control = {};
 let [globalX, globalY] = [500, 100];
+let assetsList = {}
 let museumMap;
-let playerSprite;
-let playerDim = {
-  w: 40,
-  h: 40,
-  mw: 20,
-  mh: 20
+let player;
+
+let showing = {
+  img: {},
+  x: -320,
+  y: -100
 }
-let playerCol = {
-  w: 46,
-  h: 46,
-  mw: 23,
-  mh: 23
+
+let menu = {
+  isOpen: false,
+  currentArtist: null
 }
 
 let midW, midH;
+
+const DO_DEBUG = false
 
 function preload() {
   museumMap = loadImage("assets/map.png");
