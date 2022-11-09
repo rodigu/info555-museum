@@ -16,4 +16,11 @@ function setupControls() {
     rounding: 100,
     handleRadius: 30,
   });
+  
+  menu.button = createToggle('💬', control.joystick.x + 100, control.joystick.y, 35, 35)
+  menu.button.setStyle({
+    fillBg: color(0,0,0,0),
+    strokeWeight: 0,
+    rounding: 20
+  })
 }
