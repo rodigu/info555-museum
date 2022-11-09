@@ -39,7 +39,11 @@ function setup() {
 function draw() {
   background("white");
   image(museumMap, globalX, globalY, 1000, 1000);
-  image(playerSprite, midW, midH, 40, 40);
+  // fill(0)
+  // ellipse(mouseX, mouseY, 20, 20)
+  // fill('red')
+  // rect(midW - playerCol.mw, midH - playerCol.mh, playerCol.w, playerCol.h)
+  image(playerSprite, midW, midH, playerDim.w, playerDim.h);
   text(frameRate(), 0, 0);
 
   globalX += control.joystick.valX;
