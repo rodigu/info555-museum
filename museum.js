@@ -17,6 +17,8 @@ let menu = {
   currentArtist: null
 }
 
+let audioPlaying = false
+
 let midW, midH;
 
 const DO_DEBUG = false
