@@ -1,18 +1,41 @@
 let GUI;
 let control = {};
-let [globalX, globalY] = [300, 200];
+let [globalX, globalY] = [500, 100];
+let assetsList = {};
 let museumMap;
-let playerSprite;
+let player;
+let colorCollide = 100;
+
+let showing = {
+  img: {},
+  x: -320,
+  y: -100,
+};
+
+let menu = {
+  isOpen: false,
+  currentArtist: null,
+};
+
+let audioPlaying = false;
 
 let midW, midH;
 
+const DO_DEBUG = false;
+
 function preload() {
-  museumMap = loadImage("assets/map.png");
-  museumMap.loadPixels();
-  playerSprite = loadImage("assets/pug-dog-dancing.gif");
+  assetsList.museumMap = loadImage("assets/map.png");
+  assetsList.player = loadImage("assets/pug-dog-dancing.gif");
+  showing.img = loadImage("assets/job_and_his_daughters.jpg");
 }
 
 function setup() {
+  player = new Player(assetsList.player, {
+    w: 40,
+    h: 40,
+    mw: 20,
+    mh: 20,
+  });
   createCanvas(windowWidth, windowHeight);
   setupControls();
   imageMode(CENTER);
@@ -25,45 +48,40 @@ function setup() {
 }
 
 function draw() {
-  background("white");
-  image(museumMap, globalX, globalY, 1000, 1000);
-  image(playerSprite, midW, midH, 40, 40);
-  loadPixels();
+  drawMap();
+
+  if (DO_DEBUG) debugCode();
+
+  image(player.sprite, midW, midH, player.dimensions.w, player.dimensions.h);
   text(frameRate(), 0, 0);
 
   globalX += control.joystick.valX;
   globalY += control.joystick.valY;
-  handleCollisions();
+  let collisionBox = get(
+    midW - player.collision.mw,
+    midH - player.collision.mh,
+    player.collision.w,
+    player.collision.h
+  );
+
+  collisionBox.loadPixels();
+  let collisionPixels = collisionBox.pixels;
+
+  handleMovement(collisionPixels);
 
   drawGui();
 }
 
-function handleCollisions() {
-  console.log(pixels[4 * (Math.floor(midW) * Math.floor(midH))]);
-  if (control.joystick.valX < 0) {
-    rightCollision = get(midW + 21, midH).slice(0, 3);
-    if (rightCollision.reduce((a, b) => a + b, 0) <= 120) {
-      globalX += 5;
-    }
-  }
-  if (control.joystick.valX > 0) {
-    leftCollision = get(midW - 21, midH).slice(0, 3);
-    if (leftCollision.reduce((a, b) => a + b, 0) <= 120) {
-      globalX -= 5;
-    }
-  }
-  if (control.joystick.valY > 0) {
-    topCollision = get(midW, midH - 21).slice(0, 3);
-    if (topCollision.reduce((a, b) => a + b, 0) <= 120) {
-      globalY -= 5;
-    }
-  }
-  if (control.joystick.valY < 0) {
-    bottomCollision = get(midW, midH + 21).slice(0, 3);
-    if (bottomCollision.reduce((a, b) => a + b, 0) <= 120) {
-      globalY += 5;
-    }
-  }
+function debugCode() {
+  fill(0);
+  ellipse(mouseX, mouseY, 20, 20);
+  fill("red");
+  rect(
+    midW - player.collision.mw,
+    midH - player.collision.mh,
+    player.collision.w,
+    player.collision.h
+  );
 }
 
 /// Add these lines below sketch to prevent scrolling on mobile
