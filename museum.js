@@ -73,13 +73,17 @@ function draw() {
 function debugCode() {
   fill(0);
   ellipse(mouseX, mouseY, 20, 20);
-  fill("red");
+  fill(200,50,50,80);
   rect(
     midW - player.collision.mw,
     midH - player.collision.mh,
     player.collision.w,
     player.collision.h
   );
+  for (artistName in artists){
+    let artist = artists[artistName]
+    artist.drawBoundingBox()
+  }
 }
 
 /// Add these lines below sketch to prevent scrolling on mobile
