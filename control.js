@@ -19,13 +19,22 @@ function setupControls() {
   
   menu.button = createToggle('💬', control.joystick.x + 100, control.joystick.y, 35, 35)
   menu.button.setStyle({
-    fillBg: color(0,0,0,0),
     strokeWeight: 0,
     rounding: 20
   })
 }
 
-function handleMovement(collisionPixels){
+function handleMovement(){
+  let collisionBox = get(
+    midW - player.collision.mw,
+    midH - player.collision.mh,
+    player.collision.w,
+    player.collision.h
+  );
+
+  collisionBox.loadPixels();
+  let collisionPixels = collisionBox.pixels;
+
   if (control.joystick.valX !== 0 && control.joystick.valY !== 0) {
     let rightCollision = collisionPixels.slice(4 * (player.collision.w * player.collision.mh - 1), 4 * (player.collision.w * player.collision.mh - 1) + 3)
     if (rightCollision.reduce((a, b) => a + b, 0) <= colorCollide) {
