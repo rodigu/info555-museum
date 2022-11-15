@@ -60,7 +60,6 @@ function draw() {
   if (DO_DEBUG) debugCode();
 
   image(player.sprite, midW, midH, player.dimensions.w, player.dimensions.h);
-  text(frameRate(), 0, 0);
 
   globalX += control.joystick.valX;
   globalY += control.joystick.valY;
@@ -71,6 +70,8 @@ function draw() {
 }
 
 function debugCode() {
+  text(frameRate(), 0, 0);
+
   fill(0);
   ellipse(mouseX, mouseY, 20, 20);
   fill(200,50,50,80);
