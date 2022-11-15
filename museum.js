@@ -47,10 +47,15 @@ function setup() {
   p5.disableFriendlyErrors = true;
   textSize(20);
   textAlign(LEFT, TOP);
+  
 }
 
 function draw() {
   drawMap();
+
+  handleMovement();
+
+  drawArt();
 
   if (DO_DEBUG) debugCode();
 
