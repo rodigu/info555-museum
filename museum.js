@@ -6,27 +6,23 @@ let museumMap;
 let player;
 let colorCollide = 100;
 
-let showing = {
-  img: {},
-  x: -320,
-  y: -100,
-};
-
 let menu = {
   isOpen: false,
   currentArtist: null,
 };
 
+let artists = {}
+
 let audioPlaying = false;
 
 let midW, midH;
 
-const DO_DEBUG = false;
+let DO_DEBUG = false;
 
 function preload() {
   assetsList.museumMap = loadImage("assets/map.png");
   assetsList.player = loadImage("assets/pug-dog-dancing.gif");
-  showing.img = loadImage("assets/job_and_his_daughters.jpg");
+  setupArtists(artists)
 }
 
 function setup() {
@@ -36,8 +32,14 @@ function setup() {
     mw: 20,
     mh: 20,
   });
-  createCanvas(windowWidth, windowHeight);
+
   setupControls();
+  for (let artistName in artists){
+    let artist = artists[artistName]
+    artist.generateButtons()
+  }
+
+  createCanvas(windowWidth, windowHeight);
   imageMode(CENTER);
   midW = windowWidth / 2;
   midH = windowHeight / 2;
