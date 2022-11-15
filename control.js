@@ -59,5 +59,31 @@ function handleMovement(){
 }
 
 function handleMenu(){
-  
+  if (!menu.currentArtist) {
+    menu.button.val = false
+  }
+
+  let gotArtist = false
+  for (let artistName in artists){
+    let artist = artists[artistName]
+    if (artist.playerIsIn(midW, midH)){
+      menu.currentArtist = artist
+      gotArtist = true
+      break
+    }
+  }
+
+  if (!gotArtist) menu.currentArtist = null
+
+  if (menu.currentArtist){
+    if (menu.button.val) {
+      menu.currentArtist.showButtons()
+    } else {
+      menu.currentArtist.hideButtons()
+    }
+
+    if (menu.currentArtist.questionChosen()) {
+      menu.button.val = false
+    }
+  }
 }
