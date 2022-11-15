@@ -4,7 +4,7 @@ class Artist{
         this.artList = []
         this.boundingBox = boundingBox
         this.questionButtons = []
-        this.buttonHideX = -1200
+        this.buttonHideX = -4200
         this.buttonsShown = false
     }
 
