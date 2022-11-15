@@ -64,17 +64,8 @@ function draw() {
 
   globalX += control.joystick.valX;
   globalY += control.joystick.valY;
-  let collisionBox = get(
-    midW - player.collision.mw,
-    midH - player.collision.mh,
-    player.collision.w,
-    player.collision.h
-  );
 
-  collisionBox.loadPixels();
-  let collisionPixels = collisionBox.pixels;
-
-  handleMovement(collisionPixels);
+  handleMenu()
 
   drawGui();
 }
