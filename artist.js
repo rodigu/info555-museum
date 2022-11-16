@@ -13,8 +13,9 @@ class Artist{
         let xPad = windowWidth / 10
         let hPos = 0
         for (let question of this.questionList){
-            hPos += increment
-            let b = createButton(question, xPad + this.buttonHideX, hPos, windowWidth - 2 * xPad)
+            hPos += this.increment
+            let b = createButton(question.text, xPad + this.buttonHideX, hPos, windowWidth - 2 * xPad)
+            question.addButton(b)
             this.questionButtons.push(b)
         }
     }
@@ -22,23 +23,22 @@ class Artist{
     showButtons(){
         if (this.buttonsShown) return
         this.buttonsShown = true
-        for (let b of this.questionButtons) {
+        for (let b of this.questionButtons)
             b.x -= this.buttonHideX
-        }
     }
 
     hideButtons(){
         if (!this.buttonsShown) return
         this.buttonsShown = false
-        for (let b of this.questionButtons) {
+        for (let b of this.questionButtons)
             b.x += this.buttonHideX
-        }
     }
 
     questionChosen(){
         for (let question of this.questionButtons){
             if (question.val) {
-                this.hideButtons
+                this.hideButtons()
+                question.playAudio()
                 return true
             }
         }
