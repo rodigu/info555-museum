@@ -1,8 +1,8 @@
 function setupArtists(artists){
   let boundingTest = getBoundingBox(-450,-440,250,520)
   artists.testArtist = new Artist([
-      new Question('who are you', loadSound('assets/audio/tst_audio0.mp3')),
-      new Question('how old are you', loadSound('assets/audio/tst_audio1.mp3'))
+      new Question('who are you', 'assets/audio/tst_audio0.wav'),
+      new Question('how old are you', 'assets/audio/tst_audio1.wav')
     ], boundingTest)
   artists.testArtist.artList.push({
     img: loadImage("assets/job_and_his_daughters.jpg"),
