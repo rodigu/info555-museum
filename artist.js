@@ -7,6 +7,7 @@ class Artist{
         this.buttonHideX = -4200
         this.buttonsShown = false
         this.increment = (3 * windowWidth / 4) / 8
+        this.allLoaded = false
     }
 
     generateButtons(){
@@ -21,6 +22,11 @@ class Artist{
     }
 
     drawArt(){
+        let allLoaded = true
+        if (!this.allLoaded)
+            for (let q of this.questionList) (allLoaded &= q.load())
+        this.allLoaded = allLoaded
+
         if (this.buttonsShown)
             image(this.profileImage, midW, this.increment, windowWidth / 5, windowWidth / 5)
         for (let art of this.artList)
