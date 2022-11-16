@@ -22,6 +22,8 @@ function setupControls() {
     strokeWeight: 0,
     rounding: 20
   })
+  menu.hiddenToggleX = -3000
+  menu.showToggleX = control.joystick.x + 100
 }
 
 function handleMovement(){
@@ -76,14 +78,11 @@ function handleMenu(){
   if (!gotArtist) menu.currentArtist = null
 
   if (menu.currentArtist){
-    if (menu.button.val) {
-      menu.currentArtist.showButtons()
-    } else {
-      menu.currentArtist.hideButtons()
-    }
+    menu.button.x = menu.showToggleX
 
-    if (menu.currentArtist.questionChosen()) {
-      menu.button.val = false
-    }
-  }
+    if (menu.button.val) menu.currentArtist.showButtons()
+    else menu.currentArtist.hideButtons()
+    
+    if (menu.currentArtist.questionChosen()) menu.button.val = false
+  } else menu.button.x = menu.hiddenToggleX
 }
