@@ -6,12 +6,12 @@ class Artist{
         this.questionButtons = []
         this.buttonHideX = -4200
         this.buttonsShown = false
+        this.increment = (3 * windowWidth / 4) / 8
     }
 
     generateButtons(){
-        let increment = (3 * windowWidth / 4) / 6
         let xPad = windowWidth / 10
-        let hPos = 0
+        let hPos = this.increment
         for (let question of this.questionList){
             hPos += this.increment
             let b = createButton(question.text, xPad + this.buttonHideX, hPos, windowWidth - 2 * xPad)
