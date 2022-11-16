@@ -4,6 +4,12 @@ class Question{
         this.audio = audio;
     }
 
+    load(){
+        if (typeof(this.audio) !== 'string') return true
+        this.audio = loadSound(this.audio)
+        return false
+    }
+
     playAudio(){
         if (!this.audio) return
         if (audioPlaying) 
