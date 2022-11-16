@@ -1,7 +1,6 @@
 class Question{
-    constructor(txt, button, audio){
+    constructor(txt, audio=''){
         this.text = txt;
-        this.button = button;
         this.audio = audio;
     }
 
@@ -9,5 +8,10 @@ class Question{
         if (audioPlaying) 
             audioPlaying.stop()
         this.audio.play()
+        audioPlaying = this.audio
+    }
+
+    addButton(button) {
+        this.button = button;
     }
 }
