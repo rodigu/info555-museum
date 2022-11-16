@@ -20,6 +20,7 @@ let midW, midH;
 let DO_DEBUG = false;
 
 function preload() {
+  soundFormats('wav')
   assetsList.museumMap = loadImage("assets/map.png");
   assetsList.player = loadImage("assets/pug-dog-dancing.gif");
   setupArtists(artists)
