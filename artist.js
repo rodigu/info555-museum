@@ -42,8 +42,8 @@ class Artist{
     }
 
     questionChosen(){
-        for (let question of this.questionButtons){
-            if (question.val) {
+        for (let question of this.questionList){
+            if (question.button.val) {
                 this.hideButtons()
                 question.playAudio()
                 return true
