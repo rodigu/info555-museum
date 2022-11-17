@@ -11,6 +11,8 @@ class Artist{
     }
 
     generateButtons(){
+        for (let q of this.questionList) q.load()
+
         let xPad = windowWidth / 10
         let hPos = this.increment
         for (let question of this.questionList){
@@ -22,10 +24,6 @@ class Artist{
     }
 
     drawArt(){
-        let allLoaded = true
-        if (!this.allLoaded)
-            for (let q of this.questionList) (allLoaded &= q.load())
-        this.allLoaded = allLoaded
 
         if (this.buttonsShown)
             image(this.profileImage, midW, this.increment, windowWidth / 5, windowWidth / 5)
