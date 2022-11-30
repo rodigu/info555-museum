@@ -1,4 +1,18 @@
 function setupArtists(artists){
+  createCarol()
+  createKenshay()
+  createGabrielle()
+}
+
+function createGabrielle() {
+  
+}
+
+function createKenshay() {
+
+}
+
+function createCarol() {
   let carolBounding = [
     getBoundingBox(38,-917,1200,820),
     getBoundingBox(-395, -773, 500, 600)
