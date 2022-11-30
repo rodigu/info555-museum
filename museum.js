@@ -21,7 +21,7 @@ let DO_DEBUG = false;
 
 function preload() {
   soundFormats('wav')
-  assetsList.museumMap = loadImage("assets/map.png");
+  assetsList.museumMap = loadImage("assets/art/map.jpeg");
   assetsList.player = loadImage("assets/pug-dog-dancing.gif");
   setupArtists(artists)
 }
