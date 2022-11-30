@@ -1,6 +1,6 @@
 function drawMap(){
   background("white");
-  image(assetsList.museumMap, globalX, globalY, 1000, 1000);
+  image(assetsList.museumMap, globalX, globalY, 3500, 5000);
 }
 
 function drawArt(){
