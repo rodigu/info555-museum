@@ -1,15 +1,27 @@
 function setupArtists(artists){
-  let boundingTest = getBoundingBox(-450,-440,250,520)
-  artists.testArtist = new Artist([
-      new Question('who are you', 'assets/audio/tst_audio0.wav'),
-      new Question('how old are you', 'assets/audio/tst_audio1.wav')
-    ], boundingTest)
-  artists.testArtist.artList.push({
-    img: loadImage("assets/job_and_his_daughters.jpg"),
-    x: -320,
-    y: -100,
+  let carolBounding = [
+    getBoundingBox(38,-917,1200,820),
+    getBoundingBox(-395, -773, 500, 600)
+  ]
+  artists.carol = new Artist([
+    new Question('who are you', 'assets/audio/tst_audio0.wav'),
+    new Question('how old are you', 'assets/audio/tst_audio1.wav')
+  ], carolBounding)
+  artists.carol.artList.push({
+    img: loadImage("assets/art/capychilling.jpg"),
+    x: 689,
+    y: -657,
+    w: 250,
+    h: 250
   })
-  artists.testArtist.profileImage = loadImage('assets/pug-dog-dancing.gif')
+  artists.carol.artList.push({
+    img: loadImage("assets/art/bacurau.jpeg"),
+    x: 200,
+    y: -500,
+    w: 250,
+    h: 250
+  })
+  artists.carol.profileImage = loadImage('assets/pug-dog-dancing.gif')
 }
 
 function getBoundingBox(x,y,width,height){
