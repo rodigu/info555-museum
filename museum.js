@@ -86,6 +86,10 @@ function debugCode() {
     let artist = artists[artistName]
     artist.drawBoundingBox()
   }
+
+  if (mouseIsPressed) {
+    console.log(mouseX - globalX, mouseY - globalY)
+  }
 }
 
 /// Add these lines below sketch to prevent scrolling on mobile
