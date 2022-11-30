@@ -58,15 +58,17 @@ class Artist{
 
     drawBoundingBox(){
         fill(200,50,50,80)
-        rect(this.boundingBox.x + globalX, this.boundingBox.y + globalY, this.boundingBox.w, this.boundingBox.h)
+        for (let boundingBox of this.boundingBox)
+            rect(boundingBox.x + globalX, boundingBox.y + globalY, boundingBox.w, boundingBox.h)
     }
 
     playerIsIn(px, py){
-        if (px - globalX <= this.boundingBox.x + this.boundingBox.w &&
-            px - globalX >= this.boundingBox.x - this.boundingBox.w &&
-            py - globalY <= this.boundingBox.y + this.boundingBox.h &&
-            py - globalY >= this.boundingBox.y - this.boundingBox.h)
-            return true
+        for (let boundingBox of this.boundingBox)
+            if (px - globalX <= boundingBox.x + boundingBox.w &&
+                px - globalX >= boundingBox.x - boundingBox.w &&
+                py - globalY <= boundingBox.y + boundingBox.h &&
+                py - globalY >= boundingBox.y - boundingBox.h)
+                return true
         return false
     }
 }
