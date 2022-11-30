@@ -28,7 +28,7 @@ class Artist{
         if (this.buttonsShown)
             image(this.profileImage, midW, this.increment, windowWidth / 5, windowWidth / 5)
         for (let art of this.artList)
-            image(art.img, globalX + art.x, globalY + art.y, 180, 120)
+            image(art.img, globalX + art.x, globalY + art.y, art.w, art.h)
     }
 
     showButtons(){
