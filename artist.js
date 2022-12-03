@@ -6,7 +6,7 @@ class Artist {
     this.questionButtons = [];
     this.buttonHideX = -4200;
     this.buttonsShown = false;
-    this.increment = (3 * windowWidth) / 4 / 8;
+    this.increment = (3 * windowWidth) / 4 / 7;
     this.allLoaded = false;
     this.maxQuestions = 6;
   }
@@ -14,7 +14,7 @@ class Artist {
   generateButtons() {
     for (let q of this.questionList) q.load();
 
-    let xPad = windowWidth / 10;
+    let xPad = windowWidth / 13;
     let hPos = this.increment;
     for (let question of this.questionList) {
       hPos += this.increment;
@@ -24,6 +24,10 @@ class Artist {
         hPos,
         windowWidth - 2 * xPad
       );
+      b.setStyle({
+        textSize: 15,
+        textWrap: WORD,
+      });
       question.addButton(b);
       this.questionButtons.push(b);
     }
