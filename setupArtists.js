@@ -52,10 +52,6 @@ function createCarol() {
         "assets/audio/carol-bacural.mp3"
       ),
       new Question(
-        "What do you want people to know about you and your art?",
-        "assets/audio/carol-something_about_you_and_your_art.mp3"
-      ),
-      new Question(
         "Do you struggle to enjoy your own art?",
         "assets/audio/carol-struggling_to_like_your_own_art.mp3"
       ),
@@ -68,8 +64,12 @@ function createCarol() {
         "assets/audio/carol-keep_making_art.mp3"
       ),
       new Question(
-        "How do you want people to feel when they see your art?",
+        "How do you want people to feel?",
         "assets/audio/carol-what_you_want_ppl_feel.mp3"
+      ),
+      new Question(
+        "What do you want people to know about you?",
+        "assets/audio/carol-something_about_you_and_your_art.mp3"
       ),
     ],
     carolBounding
