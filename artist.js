@@ -26,7 +26,6 @@ class Artist {
       );
       b.setStyle({
         textSize: 15,
-        textWrap: WORD,
       });
       question.addButton(b);
       this.questionButtons.push(b);
