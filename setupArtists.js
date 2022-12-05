@@ -11,8 +11,13 @@ function createGabrielle() {
   
   artists.gab = new Artist(
     [
-      new Question("who are you", "assets/audio/tst_audio0.wav"),
-      new Question("how old are you", "assets/audio/tst_audio1.wav"),
+      new Question("who are you", "assets/audio/Gab_Selfintro.m4a"),
+      new Question(" Born and raised in the Bay Area, how New York shaped your creative process", 
+        "assets/audio/Gab_CommunityNYU.m4a"),
+      new Question("When and how did you start tattoo?", 
+        "assets/audio/Gab_Tattoo.m4a"),
+      new Question("What is the inspiration of this t-shirt design?", 
+        "assets/audio/Gab_Nvshu.m4a"),
     ],
     gabBounding
   );
