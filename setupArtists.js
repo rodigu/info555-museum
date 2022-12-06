@@ -9,15 +9,15 @@ function createGabrielle() {
   let gabBounding = [
     getBoundingBox(-1400,-1800,1400,700)
   ]
-  
+
   artists.gab = new Artist(
     [
       new Question("who are you", "assets/audio/Gab_Selfintro.m4a"),
-      new Question(" Born and raised in the Bay Area, how New York shaped your creative process", 
+      new Question(" Born and raised in the Bay Area, how New York shaped your creative process",
         "assets/audio/Gab_CommunityNYU.m4a"),
-      new Question("When and how did you start tattoo?", 
+      new Question("When and how did you start tattoo?",
         "assets/audio/Gab_Tattoo.m4a"),
-      new Question("What is the inspiration of this t-shirt design?", 
+      new Question("What is the inspiration of this t-shirt design?",
         "assets/audio/Gab_Nvshu.m4a"),
     ],
     gabBounding
@@ -48,12 +48,7 @@ function createGabrielle() {
     w: 360,
     h: 470
   })
-  artists.gab.profileImage = loadImage('assets/art/gab.jpg') // image of the artist 
-}
-
-function createKenshay() {}
-=======
-
+  artists.gab.profileImage = loadImage('assets/art/gab.jpg') // image of the artist
 }
 
 function createKenshay() {
@@ -97,7 +92,6 @@ function createKenshay() {
     h:height
   }
 }
->>>>>>> Stashed changes
 
 function createCarol() {
   let carolBounding = [
