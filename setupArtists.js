@@ -5,9 +5,8 @@ function setupArtists(artists) {
 }
 
 function createGabrielle() {
-<<<<<<< Updated upstream
   let gabBounding = [
-    getBoundingBox(-1400,-1800,1400,700)
+    getBoundingBox(-1400,-1800,1800,700)
   ]
 
   artists.gab = new Artist(
@@ -58,10 +57,10 @@ function createKenshay() {
   ]
   artists.kenshay = new Artist([
     new Question('who are you', 'assets/audio/Who_are_you_K.wav'),
-    new Question('what is your background', 'assets/audio/background_Kenshay.wav')
-    new Question('how would you describe art piece #1', 'assets/audio/describe_1_kenshay.wav')
-    new Question('how would you describe art piece #2', 'assets/audio/describe_2_kenshay.wav')
-    new Question('what would you want people to know about this art piece', 'assets/audio/people_to_know_Kenshay.wav')
+    new Question('what is your background', 'assets/audio/background_Kenshay.wav'),
+    new Question('how would you describe art piece #1', 'assets/audio/describe_1_kenshay.wav'),
+    new Question('how would you describe art piece #2', 'assets/audio/describe_2_kenshay.wav'),
+    new Question('what would you want people to know about this art piece', 'assets/audio/people_to_know_Kenshay.wav'),
     new Question('is there any inspiration for this piece', 'assets/audio/Inspiration_Kenshay.wav')
   ], KenshayBounding)
   artists.kenshay.artList.push({
@@ -148,17 +147,9 @@ function createCarol() {
 
 function getBoundingBox(x, y, width, height) {
   return {
-<<<<<<< Updated upstream
     x: x,
     y: y,
     w: width,
-    h: height,
-  };
-=======
-    x:x,
-    y:y,
-    w:width,
-    h:height
+    h: height
   }
->>>>>>> Stashed changes
 }
