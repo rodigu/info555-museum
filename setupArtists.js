@@ -57,34 +57,31 @@ function createKenshay() {
     getBoundingBox(-395, -773, 500, 600)
   ]
   artists.kenshay = new Artist([
-    new Question('who are you', 'Who are you Kenshay.wav'),
-    new Question('what is your background', 'What is your background.wav')
-    new Question('how would you describe this art piece', 'Describe art piece #1.wav')
-    new Question('how would you describe this art piece', 'Describe art piece #2.wav')
-    new Question('what would you want people to know about this art piece', 'What does this art piece mean to you.wav')
-    new Question('what does this art piece mean to you', 'assets/audio/tst_audio1.wav')
-    new Question('what does this art piece mean to you', 'assets/audio/tst_audio1.wav')
-    new Question('is there any inspiration for this piece', 'assets/audio/tst_audio1.wav')
-    new Question('is there any inspiration for this piece', 'assets/audio/tst_audio1.wav')
+    new Question('who are you', 'assets/audio/Who_are_you_K.wav'),
+    new Question('what is your background', 'assets/audio/background_Kenshay.wav')
+    new Question('how would you describe art piece #1', 'assets/audio/describe_1_kenshay.wav')
+    new Question('how would you describe art piece #2', 'assets/audio/describe_2_kenshay.wav')
+    new Question('what would you want people to know about this art piece', 'assets/audio/people_to_know_Kenshay.wav')
+    new Question('is there any inspiration for this piece', 'assets/audio/Inspiration_Kenshay.wav')
   ], KenshayBounding)
   artists.kenshay.artList.push({
-    img: loadImage("assets/art/Kenshay Art #1.jpg"),
+    img: loadImage("assets/art/Kenshay_Art_1.jpg"),
     x: 689,
     y: -657,
     w: 250,
     h: 250
   })
   artists.kenshay.artList.push({
-    img: loadImage("assets/art/Kenshay Art #2.jpg"),
+    img: loadImage("assets/art/Kenshay_Art_2.jpg"),
     x: 200,
     y: -500,
     w: 250,
     h: 250
   })
-  artists.kenshay.profileImage = loadImage('assets/pug-dog-dancing.gif')
+  artists.kenshay.profileImage = loadImage('assets/art/richmond.jpeg')
   }
 
-  function getBoundingBox(x,y,width,height){ # move up if not moved already
+  function getBoundingBox(x,y,width,height){
   return {
     x:x,
     y:y,
