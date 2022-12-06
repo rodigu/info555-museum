@@ -6,7 +6,7 @@ function setupArtists(artists) {
 
 function createGabrielle() {
   let gabBounding = [
-    getBoundingBox(-1000,-917,0,820)
+    getBoundingBox(-1400,-1800,1400,700)
   ]
   
   artists.gab = new Artist(
@@ -38,6 +38,14 @@ function createGabrielle() {
 
     w: 460,
     h: 630
+  })
+  artists.gab.artList.push({
+    img: loadImage("assets/art/tattoo2.jpeg"),
+    x: -170,
+    y: -1441,
+
+    w: 360,
+    h: 470
   })
   artists.gab.profileImage = loadImage('assets/art/gab.jpg') // image of the artist 
 }

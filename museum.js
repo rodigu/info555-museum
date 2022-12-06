@@ -17,7 +17,7 @@ let audioPlaying = false;
 
 let midW, midH;
 
-let DO_DEBUG = false;
+let DO_DEBUG = true;
 
 function preload() {
   soundFormats("wav");
