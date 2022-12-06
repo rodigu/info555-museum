@@ -5,6 +5,7 @@ function setupArtists(artists) {
 }
 
 function createGabrielle() {
+<<<<<<< Updated upstream
   let gabBounding = [
     getBoundingBox(-1400,-1800,1400,700)
   ]
@@ -51,6 +52,52 @@ function createGabrielle() {
 }
 
 function createKenshay() {}
+=======
+
+}
+
+function createKenshay() {
+  let KenshayBounding = [
+    getBoundingBox(38,-917,1200,820),
+    getBoundingBox(-395, -773, 500, 600)
+  ]
+  artists.kenshay = new Artist([
+    new Question('who are you', 'Who are you Kenshay.wav'),
+    new Question('what is your background', 'What is your background.wav')
+    new Question('how would you describe this art piece', 'Describe art piece #1.wav')
+    new Question('how would you describe this art piece', 'Describe art piece #2.wav')
+    new Question('what would you want people to know about this art piece', 'What does this art piece mean to you.wav')
+    new Question('what does this art piece mean to you', 'assets/audio/tst_audio1.wav')
+    new Question('what does this art piece mean to you', 'assets/audio/tst_audio1.wav')
+    new Question('is there any inspiration for this piece', 'assets/audio/tst_audio1.wav')
+    new Question('is there any inspiration for this piece', 'assets/audio/tst_audio1.wav')
+  ], KenshayBounding)
+  artists.kenshay.artList.push({
+    img: loadImage("assets/art/capychilling.jpg"),
+    x: 689,
+    y: -657,
+    w: 250,
+    h: 250
+  })
+  artists.kenshay.artList.push({
+    img: loadImage("assets/art/bacurau.jpeg"),
+    x: 200,
+    y: -500,
+    w: 250,
+    h: 250
+  })
+  artists.kenshay.profileImage = loadImage('assets/pug-dog-dancing.gif')
+  }
+
+  function getBoundingBox(x,y,width,height){ # move up if not moved already
+  return {
+    x:x,
+    y:y,
+    w:width,
+    h:height
+  }
+}
+>>>>>>> Stashed changes
 
 function createCarol() {
   let carolBounding = [
@@ -110,9 +157,17 @@ function createCarol() {
 
 function getBoundingBox(x, y, width, height) {
   return {
+<<<<<<< Updated upstream
     x: x,
     y: y,
     w: width,
     h: height,
   };
+=======
+    x:x,
+    y:y,
+    w:width,
+    h:height
+  }
+>>>>>>> Stashed changes
 }
