@@ -6,7 +6,7 @@ function setupArtists(artists) {
 
 function createGabrielle() {
   let gabBounding = [
-    getBoundingBox(-1400,-1800,1800,700)
+    getBoundingBox(-1400,-1800,1400,900)
   ]
 
   artists.gab = new Artist(
@@ -131,16 +131,16 @@ function createCarol() {
   artists.carol.artList.push({
     img: loadImage("assets/art/capychilling.jpg"),
     x: 689,
-    y: -657,
-    w: 250,
-    h: 250,
+    y: -607,
+    w: 400,
+    h: 400,
   });
   artists.carol.artList.push({
     img: loadImage("assets/art/bacurau.jpeg"),
     x: 200,
     y: -500,
-    w: 250,
-    h: 250,
+    w: 400,
+    h: 400,
   });
   artists.carol.profileImage = loadImage("assets/pug-dog-dancing.gif");
 }
