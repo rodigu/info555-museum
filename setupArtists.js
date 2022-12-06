@@ -61,7 +61,7 @@ function createKenshay() {
     new Question('how would you describe art piece #1', 'assets/audio/describe_1_kenshay.wav'),
     new Question('how would you describe art piece #2', 'assets/audio/describe_2_kenshay.wav'),
     new Question('what would you want people to know about this art piece', 'assets/audio/people_to_know_Kenshay.wav'),
-    new Question('is there any inspiration for this piece', 'assets/audio/Inspiration_Kenshay.wav')
+    new Question('is there any inspiration for this piece', 'assets/audio/Inspiration_Kenshay 1.wav')
   ], KenshayBounding)
   artists.kenshay.artList.push({
     img: loadImage("assets/art/Kenshay_Art_1.jpg"),
