@@ -142,7 +142,7 @@ function createCarol() {
     w: 400,
     h: 400,
   });
-  artists.carol.profileImage = loadImage("assets/pug-dog-dancing.gif");
+  artists.carol.profileImage = loadImage("assets/k_profile.jpeg");
 }
 
 function getBoundingBox(x, y, width, height) {
