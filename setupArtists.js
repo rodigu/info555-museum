@@ -66,15 +66,15 @@ function createKenshay() {
   ], KenshayBounding)
   artists.kenshay.artList.push({
     img: loadImage("assets/art/Kenshay_Art_1.jpg"),
-    x: 689,
-    y: -657,
+    x: 599,
+    y: -635,
     w: 250,
     h: 250
   })
   artists.kenshay.artList.push({
     img: loadImage("assets/art/Kenshay_Art_2.jpg"),
-    x: 200,
-    y: -500,
+    x: 929,
+    y: -255,
     w: 250,
     h: 250
   })
