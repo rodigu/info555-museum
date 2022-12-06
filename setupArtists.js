@@ -52,8 +52,8 @@ function createGabrielle() {
 
 function createKenshay() {
   let KenshayBounding = [
-    getBoundingBox(38,-917,1200,820),
-    getBoundingBox(-395, -773, 500, 600)
+    getBoundingBox(-712,408,1200,1200),
+    getBoundingBox(-735, 1800, 1000, 1000)
   ]
   artists.kenshay = new Artist([
     new Question('who are you', 'assets/audio/Who_are_you_K.wav'),
@@ -65,17 +65,17 @@ function createKenshay() {
   ], KenshayBounding)
   artists.kenshay.artList.push({
     img: loadImage("assets/art/Kenshay_Art_1.jpg"),
-    x: 599,
-    y: -635,
-    w: 250,
-    h: 250
+    x: -402,
+    y: 871,
+    w: 555,
+    h: 555
   })
   artists.kenshay.artList.push({
     img: loadImage("assets/art/Kenshay_Art_2.jpg"),
-    x: 929,
-    y: -255,
-    w: 250,
-    h: 250
+    x: -1016,
+    y: 1502,
+    w: 555,
+    h: 555
   })
   artists.kenshay.profileImage = loadImage('assets/art/richmond.jpeg')
   }
