@@ -68,14 +68,14 @@ function createKenshay() {
     new Question('is there any inspiration for this piece', 'assets/audio/tst_audio1.wav')
   ], KenshayBounding)
   artists.kenshay.artList.push({
-    img: loadImage("assets/art/capychilling.jpg"),
+    img: loadImage("assets/art/Kenshay Art #1.jpg"),
     x: 689,
     y: -657,
     w: 250,
     h: 250
   })
   artists.kenshay.artList.push({
-    img: loadImage("assets/art/bacurau.jpeg"),
+    img: loadImage("assets/art/Kenshay Art #2.jpg"),
     x: 200,
     y: -500,
     w: 250,
