@@ -12,7 +12,7 @@ function createGabrielle() {
   artists.gab = new Artist(
     [
       new Question("who are you", "assets/audio/Gab_Selfintro.m4a"),
-      new Question(" Born and raised in the Bay Area, how New York shaped your creative process", 
+      new Question(" How New York shaped your creative process", 
         "assets/audio/Gab_CommunityNYU.m4a"),
       new Question("When and how did you start tattoo?", 
         "assets/audio/Gab_Tattoo.m4a"),
