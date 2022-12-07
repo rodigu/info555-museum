@@ -61,7 +61,8 @@ function draw() {
   handleMovement();
 
   drawArt();
-
+  
+  museumMinimap()
   if (DO_DEBUG) debugCode();
 
   image(player.sprite, midW, midH, player.dimensions.w, player.dimensions.h);
