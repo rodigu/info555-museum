@@ -1,11 +1,11 @@
 let GUI;
 let control = {};
-let [globalX, globalY] = [500, 100];
 let assetsList = {};
 let museumMap;
 let player;
 let colorCollide = 100;
-let zoomOutPct = .8
+let zoomOutPct = .7
+let [globalX, globalY] = [500 * zoomOutPct, 100 * zoomOutPct];
 
 let menu = {
   isOpen: false,
