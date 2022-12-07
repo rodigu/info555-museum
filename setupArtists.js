@@ -129,17 +129,17 @@ function createCarol() {
   );
   artists.carol.artList.push({
     img: loadImage("assets/art/capychilling.jpg"),
-    x: 689,
-    y: -607,
-    w: 400,
-    h: 400,
+    x: 679,
+    y: -527,
+    w: 540,
+    h: 540,
   });
   artists.carol.artList.push({
     img: loadImage("assets/art/bacurau.jpeg"),
-    x: 200,
-    y: -500,
-    w: 400,
-    h: 400,
+    x: 100,
+    y: -480,
+    w: 540,
+    h: 540,
   });
   artists.carol.profileImage = loadImage("assets/k_profile.jpeg");
 }
