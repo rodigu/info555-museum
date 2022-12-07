@@ -59,7 +59,7 @@ function createKenshay() {
     new Question('what is your background', 'assets/audio/background_Kenshay.m4a'),
     new Question('how would you describe art piece #1', 'assets/audio/describe_1_kenshay.m4a'),
     new Question('how would you describe art piece #2', 'assets/audio/describe_2_kenshay.m4a'),
-    new Question('what should I know', 'assets/audio/Kenshay_people_should_know.wav'),
+    new Question('what should I know', 'assets/audio/Kenshay_people_should_know.m4a'),
     new Question('is there any inspiration for this piece', 'assets/audio/inspiration_kenshay.m4a')
   ], KenshayBounding)
   artists.kenshay.artList.push({
