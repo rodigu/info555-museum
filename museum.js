@@ -5,6 +5,7 @@ let assetsList = {};
 let museumMap;
 let player;
 let colorCollide = 100;
+let zoomOutPct = .8
 
 let menu = {
   isOpen: false,
