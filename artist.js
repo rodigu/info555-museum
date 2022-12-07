@@ -88,6 +88,7 @@ class Artist {
         py - globalY >= boundingBox.y
       )
         return true;
+    this.hideButtons()
     return false;
   }
 }
