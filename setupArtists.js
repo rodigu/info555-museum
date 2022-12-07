@@ -12,7 +12,7 @@ function createGabrielle() {
   artists.gab = new Artist(
     [
       new Question("who are you", "assets/audio/Gab_Selfintro.m4a"),
-      new Question(" How New York shaped your creative process", 
+      new Question(" How New York shaped your creative process",
         "assets/audio/Gab_CommunityNYU.m4a"),
       new Question("When and how did you start tattoo?",
         "assets/audio/Gab_Tattoo.m4a"),
@@ -52,14 +52,14 @@ function createGabrielle() {
 
 function createKenshay() {
   let KenshayBounding = [
-    getBoundingBox(-1094,1732,1200,1200),
+    getBoundingBox(-1111,540,1200,1200),
   ]
   artists.kenshay = new Artist([
     new Question('who are you', 'assets/audio/who_are_you_kenshay.m4a'),
     new Question('what is your background', 'assets/audio/background_Kenshay.m4a'),
     new Question('how would you describe art piece #1', 'assets/audio/describe_1_kenshay.m4a'),
     new Question('how would you describe art piece #2', 'assets/audio/describe_2_kenshay.m4a'),
-    new Question('what would you want people to know about this art piece', 'assets/audio/Kenshay_people_should_know.wav'),
+    new Question('what should I know', 'assets/audio/Kenshay_people_should_know.wav'),
     new Question('is there any inspiration for this piece', 'assets/audio/inspiration_kenshay.m4a')
   ], KenshayBounding)
   artists.kenshay.artList.push({
