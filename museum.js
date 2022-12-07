@@ -17,7 +17,7 @@ let audioPlaying = false;
 
 let midW, midH;
 
-let DO_DEBUG = true;
+let DO_DEBUG = false;
 
 function preload() {
   soundFormats("wav");
@@ -27,6 +27,7 @@ function preload() {
 }
 
 function setup() {
+  getAudioContext().suspend();
   player = new Player(assetsList.player, {
     w: 40,
     h: 40,
@@ -49,6 +50,8 @@ function setup() {
   textSize(15);
   textAlign(LEFT, TOP);
   textWrap(WORD);
+  userStartAudio();
+
 }
 
 function draw() {

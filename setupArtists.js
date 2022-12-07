@@ -6,17 +6,17 @@ function setupArtists(artists) {
 
 function createGabrielle() {
   let gabBounding = [
-    getBoundingBox(-1400,-1800,1400,700)
+    getBoundingBox(-1400,-1800,1400,900)
   ]
-  
+
   artists.gab = new Artist(
     [
       new Question("who are you", "assets/audio/Gab_Selfintro.m4a"),
       new Question(" How New York shaped your creative process", 
         "assets/audio/Gab_CommunityNYU.m4a"),
-      new Question("When and how did you start tattoo?", 
+      new Question("When and how did you start tattoo?",
         "assets/audio/Gab_Tattoo.m4a"),
-      new Question("What is the inspiration of this t-shirt design?", 
+      new Question("What is the inspiration of this t-shirt design?",
         "assets/audio/Gab_Nvshu.m4a"),
     ],
     gabBounding
@@ -47,10 +47,47 @@ function createGabrielle() {
     w: 360,
     h: 470
   })
-  artists.gab.profileImage = loadImage('assets/art/gab.jpg') // image of the artist 
+  artists.gab.profileImage = loadImage('assets/art/gab.jpg') // image of the artist
 }
 
-function createKenshay() {}
+function createKenshay() {
+  let KenshayBounding = [
+    getBoundingBox(-712,408,1200,1200),
+    getBoundingBox(-735, 1800, 1000, 1000)
+  ]
+  artists.kenshay = new Artist([
+    new Question('who are you', 'assets/audio/who_are_you_kenshay.m4a'),
+    new Question('what is your background', 'assets/audio/background_Kenshay.m4a'),
+    new Question('how would you describe art piece #1', 'assets/audio/describe_1_kenshay.m4a'),
+    new Question('how would you describe art piece #2', 'assets/audio/describe_2_kenshay.m4a'),
+    new Question('what would you want people to know about this art piece', 'assets/audio/Kenshay_people_should_know.wav'),
+    new Question('is there any inspiration for this piece', 'assets/audio/inspiration_kenshay.m4a')
+  ], KenshayBounding)
+  artists.kenshay.artList.push({
+    img: loadImage("assets/art/Kenshay_Art_1.jpg"),
+    x: -402,
+    y: 871,
+    w: 300,
+    h: 300
+  })
+  artists.kenshay.artList.push({
+    img: loadImage("assets/art/Kenshay_Art_2.jpg"),
+    x: -1016,
+    y: 1502,
+    w: 300,
+    h: 300
+  })
+  artists.kenshay.profileImage = loadImage('assets/art/richmond.jpeg')
+  }
+
+  function getBoundingBox(x,y,width,height){
+  return {
+    x:x,
+    y:y,
+    w:width,
+    h:height
+  }
+}
 
 function createCarol() {
   let carolBounding = [
@@ -65,7 +102,7 @@ function createCarol() {
         "assets/audio/carol-capychillling.mp3"
       ),
       new Question(
-        "Why did you createthe piece bacurau?",
+        "Why did you create the piece bacurau?",
         "assets/audio/carol-bacural.mp3"
       ),
       new Question(
@@ -94,18 +131,18 @@ function createCarol() {
   artists.carol.artList.push({
     img: loadImage("assets/art/capychilling.jpg"),
     x: 689,
-    y: -657,
-    w: 250,
-    h: 250,
+    y: -607,
+    w: 400,
+    h: 400,
   });
   artists.carol.artList.push({
     img: loadImage("assets/art/bacurau.jpeg"),
     x: 200,
     y: -500,
-    w: 250,
-    h: 250,
+    w: 400,
+    h: 400,
   });
-  artists.carol.profileImage = loadImage("assets/pug-dog-dancing.gif");
+  artists.carol.profileImage = loadImage("assets/k_profile.jpeg");
 }
 
 function getBoundingBox(x, y, width, height) {
@@ -113,6 +150,6 @@ function getBoundingBox(x, y, width, height) {
     x: x,
     y: y,
     w: width,
-    h: height,
-  };
+    h: height
+  }
 }

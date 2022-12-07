@@ -83,9 +83,9 @@ class Artist {
     for (let boundingBox of this.boundingBox)
       if (
         px - globalX <= boundingBox.x + boundingBox.w &&
-        px - globalX >= boundingBox.x - boundingBox.w &&
+        px - globalX >= boundingBox.x &&
         py - globalY <= boundingBox.y + boundingBox.h &&
-        py - globalY >= boundingBox.y - boundingBox.h
+        py - globalY >= boundingBox.y
       )
         return true;
     return false;
