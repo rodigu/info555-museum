@@ -56,26 +56,26 @@ function createKenshay() {
     getBoundingBox(-735, 1800, 1000, 1000)
   ]
   artists.kenshay = new Artist([
-    new Question('who are you', 'assets/audio/Who_are_you_K.wav'),
-    new Question('what is your background', 'assets/audio/background_Kenshay.wav'),
-    new Question('how would you describe art piece #1', 'assets/audio/describe_1_kenshay.wav'),
-    new Question('how would you describe art piece #2', 'assets/audio/describe_2_kenshay.wav'),
-    new Question('what would you want people to know about this art piece', 'assets/audio/people_to_know_Kenshay.wav'),
-    new Question('is there any inspiration for this piece', 'assets/audio/Inspiration_Kenshay 1.wav')
+    new Question('who are you', 'assets/audio/who_are_you_kenshay.m4a'),
+    new Question('what is your background', 'assets/audio/background_Kenshay.m4a'),
+    new Question('how would you describe art piece #1', 'assets/audio/describe_1_kenshay.m4a'),
+    new Question('how would you describe art piece #2', 'assets/audio/describe_2_kenshay.m4a'),
+    new Question('what would you want people to know about this art piece', 'assets/audio/Kenshay_people_should_know.wav'),
+    new Question('is there any inspiration for this piece', 'assets/audio/inspiration_kenshay.m4a')
   ], KenshayBounding)
   artists.kenshay.artList.push({
     img: loadImage("assets/art/Kenshay_Art_1.jpg"),
     x: -402,
     y: 871,
-    w: 500,
-    h: 555
+    w: 300,
+    h: 300
   })
   artists.kenshay.artList.push({
     img: loadImage("assets/art/Kenshay_Art_2.jpg"),
     x: -1016,
     y: 1502,
-    w: 500,
-    h: 500
+    w: 300,
+    h: 300
   })
   artists.kenshay.profileImage = loadImage('assets/art/richmond.jpeg')
   }
