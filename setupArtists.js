@@ -66,15 +66,15 @@ function createKenshay() {
     img: loadImage("assets/art/Kenshay_Art_1.jpg"),
     x: -714,
     y: 919,
-    w: 355,
-    h: 355
+    w: 555,
+    h: 555
   })
   artists.kenshay.artList.push({
     img: loadImage("assets/art/Kenshay_Art_2.jpg"),
     x: -707,
     y: 1547,
-    w: 355,
-    h: 355
+    w: 555,
+    h: 555
   })
   artists.kenshay.profileImage = loadImage('assets/art/richmond.jpeg')
   }
