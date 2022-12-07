@@ -61,6 +61,7 @@ class Artist {
     for (let question of this.questionList) {
       if (question.button.val) {
         this.hideButtons();
+        menu.button.val = false
         question.playAudio();
         return true;
       }
