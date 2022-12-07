@@ -24,6 +24,13 @@ function setupControls() {
   })
   menu.hiddenToggleX = -3000
   menu.showToggleX = control.joystick.x + 100
+  menu.showMuteX = control.joystick.x - 35
+
+  menu.mute = createButton('🔇', control.joystick.x - 35, control.joystick.y, 35, 35)
+  menu.mute.setStyle({
+    strokeWeight: 0,
+    rounding: 20
+  })
 }
 
 function handleMovement(){
@@ -85,4 +92,14 @@ function handleMenu(){
     
     if (menu.currentArtist.questionChosen()) menu.button.val = false
   } else menu.button.x = menu.hiddenToggleX
+
+  if (audioPlaying && audioPlaying.isPlaying()) {
+    menu.mute.x = menu.showMuteX
+  } else menu.mute.x = menu.hiddenToggleX
+
+  if (menu.mute.isPressed) {
+    if (audioPlaying) 
+        audioPlaying.stop()
+    audioPlaying = null
+  }
 }
