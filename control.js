@@ -6,10 +6,10 @@ function setupControls() {
     (3 * windowHeight) / 4,
     100,
     100,
-    5,
-    -5,
-    -5,
-    5
+    4,
+    -4,
+    -4,
+    4
   );
   control.joystick.setStyle({
     fillBg: color("#0"),
