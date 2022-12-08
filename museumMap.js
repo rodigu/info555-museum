@@ -1,6 +1,5 @@
 function drawMap(){
-  background("white");
-  image(assetsList.museumMap, globalX, globalY, 3500 * zoomOutPct, 5000 * zoomOutPct);
+  image(assetsList.museumMap, globalX, globalY, mapW, mapH);
 }
 
 function drawArt(){
@@ -14,11 +13,12 @@ function drawArt(){
 function museumMinimap() {
   push()
   imageMode(CORNERS)
-  let minimapWidth = 35 * midW / 80
-  let minimapHeight = 50 * midW / 80
+  let minimapWidth = (mapW / 70) * (midW / 50)
+  let minimapHeight = (mapH / 70) * (midW / 50)
   image(assetsList.museumMap, 0, 0, minimapWidth, minimapHeight)
-  let xRef = - globalX * (minimapWidth / (3500 * zoomOutPct)) + 50
-  let yRef = - globalY * (minimapHeight / (5000 * zoomOutPct)) + 77
+  
+  let xRef = map(globalX - midW, mapW / 2, -mapW / 2, 0, minimapWidth)
+  let yRef = map(globalY - midH, mapH / 2, -mapH / 2, 0, minimapHeight)
   fill(200, 0, 0)
   circle(xRef, yRef, 5)
   pop()
