@@ -9,6 +9,7 @@ class Artist {
     this.increment = (3 * windowWidth) / 4 / 7;
     this.allLoaded = false;
     this.maxQuestions = 6;
+    this.shownArt = null
   }
 
   generateButtons() {
@@ -32,9 +33,22 @@ class Artist {
     }
   }
 
+  addArt(art) {
+    let { x, y, w, h, img } = art
+    this.artList.push({
+      img,
+      x: x * zoomOutPct,
+      y: y * zoomOutPct,
+      w: w * zoomOutPct,
+      h: h * zoomOutPct
+    })
+  }
+
   drawArt() {
-    for (let art of this.artList)
+    for (let art of this.artList) {
       image(art.img, globalX + art.x, globalY + art.y, art.w, art.h);
+    }
+
     if (this.buttonsShown)
       image(
         this.profileImage,
@@ -43,6 +57,12 @@ class Artist {
         windowWidth / 5,
         windowWidth / 5
       );
+  }
+
+  popUpArt() {
+    if (!this.shownArt) return
+    let { w, h, img } = this.shownArt
+    image(img, midW, midH, midW, h * (midW / w))
   }
 
   showButtons() {
@@ -82,14 +102,21 @@ class Artist {
 
   playerIsIn(px, py) {
     for (let boundingBox of this.boundingBox)
-      if (
-        px - globalX <= boundingBox.x + boundingBox.w &&
-        px - globalX >= boundingBox.x &&
-        py - globalY <= boundingBox.y + boundingBox.h &&
-        py - globalY >= boundingBox.y
-      )
+      if (this.posIsIn(px, py, boundingBox))
         return true;
     this.hideButtons()
     return false;
+  }
+
+  posIsIn(x, y, boundary, withGlobal=true) {
+    let gx = withGlobal ? globalX : 0
+    let gy = withGlobal ? globalY : 0
+
+    return (
+      x - gx <= boundary.x + boundary.w && 
+      x - gx >= boundary.x &&
+      y - gy <= boundary.y + boundary.h &&
+      y - gy >= boundary.y
+    )
   }
 }

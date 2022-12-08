@@ -75,11 +75,14 @@ function handleMenu(){
   let gotArtist = false
   for (let artistName in artists){
     let artist = artists[artistName]
-    if (artist.playerIsIn(midW, midH)){
-      menu.currentArtist = artist
-      gotArtist = true
-      break
+    for (let art of artist.artList){
+      if (artist.playerIsIn(midW, midH)){
+        menu.currentArtist = artist
+        gotArtist = true
+        break
+      }
     }
+    artist.popUpArt()
   }
 
   if (!gotArtist) menu.currentArtist = null
@@ -102,4 +105,6 @@ function handleMenu(){
         audioPlaying.stop()
     audioPlaying = null
   }
+
+  
 }

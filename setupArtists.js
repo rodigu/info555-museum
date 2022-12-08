@@ -6,7 +6,7 @@ function setupArtists(artists) {
 
 function createGabrielle() {
   let gabBounding = [
-    getBoundingBox(-1400 * zoomOutPct,-1800 * zoomOutPct,1400 * zoomOutPct,900 * zoomOutPct)
+    getBoundingBox(-1400,-1800,1400,900)
   ]
 
   artists.gab = new Artist(
@@ -22,34 +22,34 @@ function createGabrielle() {
     gabBounding
   );
 
-  artists.gab.artList.push({
+  artists.gab.addArt({
     img: loadImage("assets/art/nvshu.jpeg"),
-    x: -1100 * zoomOutPct,
-    y: -1441 * zoomOutPct,
-    w: 550 * zoomOutPct,
-    h: 400 * zoomOutPct
+    x: -1100,
+    y: -1441,
+    w: 550,
+    h: 400
   })
 
-  artists.gab.artList.push({
+  artists.gab.addArt({
     img: loadImage("assets/art/tattoo.jpeg"),
-    x: -600 * zoomOutPct,
-    y: -1441 * zoomOutPct,
-    w: 460 * zoomOutPct,
-    h: 630 * zoomOutPct
+    x: -600,
+    y: -1441,
+    w: 460,
+    h: 630
   })
-  artists.gab.artList.push({
+  artists.gab.addArt({
     img: loadImage("assets/art/tattoo2.jpeg"),
-    x: -170 * zoomOutPct,
-    y: -1441 * zoomOutPct,
-    w: 360 * zoomOutPct,
-    h: 470 * zoomOutPct
+    x: -170,
+    y: -1441,
+    w: 360,
+    h: 470
   })
   artists.gab.profileImage = loadImage('assets/art/gab.jpg') // image of the artist
 }
 
 function createKenshay() {
   let KenshayBounding = [
-    getBoundingBox(-1111 * zoomOutPct,540 * zoomOutPct,1200 * zoomOutPct,1200 * zoomOutPct),
+    getBoundingBox(-1111,540,1200,1200),
   ]
   artists.kenshay = new Artist([
     new Question('who are you', 'assets/audio/who_are_you_kenshay.m4a'),
@@ -59,27 +59,27 @@ function createKenshay() {
     new Question('what should I know', 'assets/audio/Kenshay_people_should_know.m4a'),
     new Question('is there any inspiration for this piece', 'assets/audio/inspiration_kenshay.m4a')
   ], KenshayBounding)
-  artists.kenshay.artList.push({
+  artists.kenshay.addArt({
     img: loadImage("assets/art/Kenshay_Art_1.jpg"),
-    x: -714 * zoomOutPct,
-    y: 919 * zoomOutPct,
-    w: 555 * zoomOutPct,
-    h: 555 * zoomOutPct
+    x: -714,
+    y: 919,
+    w: 555,
+    h: 555
   })
-  artists.kenshay.artList.push({
+  artists.kenshay.addArt({
     img: loadImage("assets/art/Kenshay_Art_2.jpg"),
-    x: -707 * zoomOutPct,
-    y: 1547 * zoomOutPct,
-    w: 555 * zoomOutPct,
-    h: 555 * zoomOutPct
+    x: -707,
+    y: 1547,
+    w: 555,
+    h: 555
   })
   artists.kenshay.profileImage = loadImage('assets/art/richmond.jpeg')
   }
 
 function createCarol() {
   let carolBounding = [
-    getBoundingBox(38 * zoomOutPct, -917 * zoomOutPct, 1200 * zoomOutPct, 820 * zoomOutPct),
-    getBoundingBox(-395 * zoomOutPct, -773 * zoomOutPct, 500 * zoomOutPct, 600 * zoomOutPct),
+    getBoundingBox(38, -917, 1200, 820),
+    getBoundingBox(-395, -773, 500, 600),
   ];
   artists.carol = new Artist(
     [
@@ -115,28 +115,28 @@ function createCarol() {
     ],
     carolBounding
   );
-  artists.carol.artList.push({
+  artists.carol.addArt({
     img: loadImage("assets/art/capychilling.jpg"),
-    x: 679 * zoomOutPct,
-    y: -527 * zoomOutPct,
-    w: 540 * zoomOutPct,
-    h: 540 * zoomOutPct,
+    x: 679,
+    y: -527,
+    w: 540,
+    h: 540,
   });
-  artists.carol.artList.push({
+  artists.carol.addArt({
     img: loadImage("assets/art/bacurau.jpeg"),
-    x: 100 * zoomOutPct,
-    y: -480 * zoomOutPct,
-    w: 540 * zoomOutPct,
-    h: 540 * zoomOutPct,
+    x: 100,
+    y: -480,
+    w: 540,
+    h: 540,
   });
   artists.carol.profileImage = loadImage("assets/k_profile.jpeg");
 }
 
 function getBoundingBox(x, y, width, height) {
   return {
-    x: x,
-    y: y,
-    w: width,
-    h: height
+    x: x * zoomOutPct,
+    y: y * zoomOutPct,
+    w: width * zoomOutPct,
+    h: height * zoomOutPct
   }
 }
