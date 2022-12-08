@@ -100,15 +100,17 @@ function debugCode() {
 }
 
 function mousePressed() {
+  if (control.joystick.isChanged)
+    return
   for (let artistName in artists){
     let artist = artists[artistName]
-    if (!control.joystick.isChanged){
-      if (artist.shownArt){
-        artist.shownArt = null
-        return
-      }
+    
+    if (artist.shownArt){
       artist.shownArt = null
+      return
     }
+    artist.shownArt = null
+    
     for (let art of artist.artList){
       if (!artist.shownArt && artist.posIsIn(mouseX, mouseY, { x: art.x - art.w / 2, y: art.y - art.h / 2, w: art.w, h: art.h }))
         artist.shownArt = art
