@@ -6,6 +6,8 @@ let player;
 let colorCollide = 100;
 let zoomOutPct = .6
 let [globalX, globalY] = [500 * zoomOutPct, 100 * zoomOutPct];
+let mapW = 3500 * zoomOutPct
+let mapH = 5000 * zoomOutPct
 
 let menu = {
   isOpen: false,
@@ -56,6 +58,7 @@ function setup() {
 }
 
 function draw() {
+  background(0)
   drawMap();
 
   handleMovement();
